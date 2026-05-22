@@ -82,5 +82,5 @@ This website can be hosted for free on:
 ## 🧑‍💻 Author
 
 **Philippe Brochier**  
-*   Email: [philippe.brochier@efrei.net](mailto:philippe.brochier@efrei.net)
+*   Email: [brochier84@gmail.com](mailto:brochier84@gmail.com)
 *   GitHub: [@filipito93360](https://github.com/filipito93360)
