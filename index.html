@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippe Brochier | Portfolio & Skills</title>
+    <meta name="description" content="Professional portfolio of Philippe Brochier, Software Engineering Student at EFREI Paris. Specialized in Web Development (React, Vue, JS) and general programming (Python, Java, C).">
+    
+    <!-- Google Fonts: Outfit for headers, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="fr"> <!-- Defaulting to French as the source document info.md was primary FR -->
+
+    <!-- Ambient background light glows -->
+    <div class="glow-bg">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <span class="logo-accent">&lt;</span>Philippe<span class="logo-accent"> /&gt;</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" id="nav-home">
+                    <span class="lang-fr">Accueil</span>
+                    <span class="lang-en">Home</span>
+                </a>
+                <a href="#about" class="nav-link" id="nav-about">
+                    <span class="lang-fr">À Propos</span>
+                    <span class="lang-en">About</span>
+                </a>
+                <a href="#skills" class="nav-link" id="nav-skills">
+                    <span class="lang-fr">Compétences</span>
+                    <span class="lang-en">Skills</span>
+                </a>
+                <a href="#projects" class="nav-link" id="nav-projects">
+                    <span class="lang-fr">Projets</span>
+                    <span class="lang-en">Projects</span>
+                </a>
+                <a href="#contact" class="nav-link" id="nav-contact">
+                    <span class="lang-fr">Contact</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Language Toggle Button -->
+                <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Toggle language">
+                    <span class="toggle-fr-label">FR</span>
+                    <div class="toggle-switch">
+                        <div class="toggle-knob"></div>
+                    </div>
+                    <span class="toggle-en-label">EN</span>
+                </button>
+                
+                <!-- Mobile Navigation Toggle -->
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-greeting">
+                        <span class="lang-fr">👋 Bonjour, je m'appelle</span>
+                        <span class="lang-en">👋 Hello, my name is</span>
+                    </span>
+                    <h1 class="hero-title">Philippe Brochier</h1>
+                    
+                    <h2 class="hero-subtitle">
+                        <span class="lang-fr">Étudiant en </span>
+                        <span class="lang-en">Student in </span>
+                        <span class="typed-text" id="typedText"></span>
+                    </h2>
+                    
+                    <p class="hero-description">
+                        <span class="lang-fr">
+                            Passionné d'informatique depuis mes 12 ans, je construis des applications web et logicielles performantes. Actuellement à l'EFREI Paris, je cherche à mettre ma passion au service de projets professionnels d'envergure.
+                        </span>
+                        <span class="lang-en">
+                            Passionate about computer science since the age of 12, I build high-performance web and software applications. Currently at EFREI Paris, I aim to channel my passion into professional-scale projects.
+                        </span>
+                    </p>
+                    
+                    <div class="hero-badge-container">
+                        <div class="status-badge">
+                            <span class="pulse-dot"></span>
+                            <span class="lang-fr">Recherche Alternance - Logiciels & Systèmes d'Information</span>
+                            <span class="lang-en">Seeking Apprenticeship - Software & Info Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span class="lang-fr">Voir mes projets</span>
+                            <span class="lang-en">View my projects</span>
+                            <i class="fa-solid fa-arrow-down icon-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span class="lang-fr">Me contacter</span>
+                            <span class="lang-en">Contact me</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="tab-title">philippe.py</span>
+                        </div>
+                        <div class="code-body">
+                            <pre><code><span class="keyword">class</span> <span class="class-name">Developer</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):
+        <span class="variable">self</span>.name = <span class="string">"Philippe BROCHIER"</span>
+        <span class="variable">self</span>.school = <span class="string">"EFREI Paris"</span>
+        <span class="variable">self</span>.status = <span class="string">"Looking for Apprenticeship"</span>
+        <span class="variable">self</span>.hobbies = [<span class="string">"Coding"</span>, <span class="string">"CTFs"</span>, <span class="string">"Learning"</span>]
+
+    <span class="keyword">def</span> <span class="function">get_philosophy</span>(<span class="variable">self</span>):
+        <span class="keyword">return</span> <span class="string">"From hobbyist to professional."</span>
+
+<span class="variable">me</span> = Developer()
+print(<span class="variable">me</span>.get_philosophy())
+<span class="comment"># Output: From hobbyist to professional.</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="lang-fr">À Propos de Moi</span>
+                        <span class="lang-en">About Me</span>
+                    </h2>
+                    <div class="section-subtitle">
+                        <span class="lang-fr">Mon parcours de passionné vers la professionnalisation</span>
+                        <span class="lang-en">My journey from passion to professionalism</span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text-column">
+                        <h3 class="about-intro-title">
+                            <span class="lang-fr">D'un passe-temps à une carrière d'ingénieur</span>
+                            <span class="lang-en">From a hobby to an engineering career</span>
+                        </h3>
+                        
+                        <div class="about-description">
+                            <p class="lang-fr">
+                                J'ai commencé à coder à l'âge de 12 ans avec <strong>Python</strong>. Pendant de nombreuses années, j'ai vu la programmation comme un loisir créatif, un espace d'exploration plutôt qu'une contrainte scolaire. C'est cette curiosité naturelle qui m'a poussé à sans cesse chercher des solutions et relever des défis.
+                            </p>
+                            <p class="lang-en">
+                                I started coding when I was 12, starting with <strong>Python</strong>. For many years, I considered coding as a creative hobby, a sandbox for exploration rather than a school requirement. This natural curiosity drove me to constantly solve problems and tackle challenges.
+                            </p>
+
+                            <p class="lang-fr">
+                                Aujourd'hui, je souhaite professionnaliser mes compétences et ma méthodologie. Après un cycle préparatoire intégré axé sur la physique et la technique à l'<strong>ESME Sudria</strong>, j'ai choisi de me réorienter vers l'<strong>EFREI Paris</strong> pour me spécialiser pleinement en informatique et systèmes d'information.
+                            </p>
+                            <p class="lang-en">
+                                Today, I want to bring professional standards to my coding and methodologies. After attending integrated preparatory classes at the engineering school <strong>ESME Sudria</strong>, I made the conscious decision to transfer to <strong>EFREI Paris</strong> to fully focus on computer science and information systems.
+                            </p>
+
+                            <p class="lang-fr">
+                                Je recherche activement un contrat d'<strong>alternance</strong> de 3 ans dans la majeure <strong>Logiciels et Systèmes d'Informations</strong> pour me former sur le terrain en tant que développeur web, applicatif ou fullstack.
+                            </p>
+                            <p class="lang-en">
+                                I am actively seeking a 3-year <strong>apprenticeship</strong> contract in the <strong>Software and Information Systems</strong> major to gain hands-on industry experience as a web, applicative, or fullstack developer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-stats-column">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="stat-info">
+                                <h4 class="lang-fr">Formation Actuelle</h4>
+                                <h4 class="lang-en">Education</h4>
+                                <p class="lang-fr">Cycle Ingénieur (1ère année / L3) - EFREI Paris</p>
+                                <p class="lang-en">Engineering Cycle (1st Year / L3) - EFREI Paris</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-hourglass-start"></i></div>
+                            <div class="stat-info">
+                                <h4 class="lang-fr">Années de code</h4>
+                                <h4 class="lang-en">Years of Coding</h4>
+                                <p class="lang-fr">Pratique régulière depuis plus de 8 ans (début à 12 ans)</p>
+                                <p class="lang-en">Self-taught & coding for over 8 years (started at 12)</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                            <div class="stat-info">
+                                <h4 class="lang-fr">Recherche Actuelle</h4>
+                                <h4 class="lang-en">Seeking Position</h4>
+                                <p class="lang-fr">Alternance (Sept. 2026) en Développement Logiciel / Fullstack</p>
+                                <p class="lang-en">Apprenticeship (Sept 2026) in Software / Fullstack Dev</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="lang-fr">Compétences Techniques</span>
+                        <span class="lang-en">Technical Skills</span>
+                    </h2>
+                    <div class="section-subtitle">
+                        <span class="lang-fr">Les langages et outils que j'utilise pour donner vie aux idées</span>
+                        <span class="lang-en">Languages and tools I use to bring ideas to life</span>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Web Development Stack -->
+                    <div class="skills-category-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-code"></i>
+                            <h3 class="lang-fr">Développement Web</h3>
+                            <h3 class="lang-en">Web Development</h3>
+                        </div>
+                        
+                        <div class="skills-list">
+                            <!-- JS -->
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span class="skill-name"><i class="fa-brands fa-js icon-js"></i> JavaScript</span>
+                                    <span class="skill-level">React & Vue</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill fill-js" style="width: 85%;"></div></div>
+                                <p class="skill-details lang-fr">Mon langage préféré. Exploré en Vanilla JS, React.js et Vue.js.</p>
+                                <p class="skill-details lang-en">One of my favorite languages. Experienced with Vanilla, React, and Vue.</p>
+                            </div>
+                            <!-- HTML -->
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span class="skill-name"><i class="fa-brands fa-html5 icon-html"></i> HTML5</span>
+                                    <span class="skill-level">Avancé</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill fill-html" style="width: 90%;"></div></div>
+                                <p class="skill-details lang-fr">Appris au lycée, je consolide continuellement mes concepts sémantiques.</p>
+                                <p class="skill-details lang-en">Learnt during high school, constantly keeping up to date with HTML5 standards.</p>
+                            </div>
+                            <!-- CSS -->
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span class="skill-name"><i class="fa-brands fa-css3-alt icon-css"></i> CSS3 / Tailwind / Bootstrap</span>
+                                    <span class="skill-level">Intermédiaire</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill fill-css" style="width: 75%;"></div></div>
+                                <p class="skill-details lang-fr">Maîtrise des intégrations rapides via Bootstrap & Tailwind CSS.</p>
+                                <p class="skill-details lang-en">Proficient with layouts. Used frameworks like Bootstrap & Tailwind for speed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General Programming Stack -->
+                    <div class="skills-category-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-terminal"></i>
+                            <h3 class="lang-fr">Langages Généraux & Back-End</h3>
+                            <h3 class="lang-en">General & Back-End Dev</h3>
+                        </div>
+
+                        <div class="skills-list">
+                            <!-- Python -->
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span class="skill-name"><i class="fa-brands fa-python icon-python"></i> Python</span>
+                                    <span class="skill-level">Avancé</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill fill-python" style="width: 90%;"></div></div>
+                                <p class="skill-details lang-fr">Mon premier langage. Utilisé pour les CTFs, scripts et la Data (Pandas/DataFrames).</p>
+                                <p class="skill-details lang-en">My first language. Used for writing tools, solving CTFs, and Data (Pandas/DataFrames).</p>
+                            </div>
+                            <!-- Java -->
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span class="skill-name"><i class="fa-brands fa-java icon-java"></i> Java (POO)</span>
+                                    <span class="skill-level">Intermédiaire</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill fill-java" style="width: 80%;"></div></div>
+                                <p class="skill-details lang-fr">M'a enseigné la Programmation Orientée Objet (POO) et sa structure modulaire.</p>
+                                <p class="skill-details lang-en">Enabled me to learn Object-Oriented Programming (OOP) design and structure patterns.</p>
+                            </div>
+                            <!-- C -->
+                            <div class="skill-item">
+                                <div class="skill-meta">
+                                    <span class="skill-name"><i class="fa-solid fa-c icon-c"></i> Langage C</span>
+                                    <span class="skill-level">Académique</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill fill-c" style="width: 65%;"></div></div>
+                                <p class="skill-details lang-fr">Enseigné en cours. Idéal pour comprendre la gestion mémoire et le bas niveau.</p>
+                                <p class="skill-details lang-en">Learnt in class. Excellent for understanding memory allocation and low-level basics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="lang-fr">Mes Projets Récents</span>
+                        <span class="lang-en">My Recent Projects</span>
+                    </h2>
+                    <div class="section-subtitle">
+                        <span class="lang-fr">Une sélection de travaux pratiques tirés de mon profil GitHub</span>
+                        <span class="lang-en">A selection of repositories sourced directly from my GitHub profile</span>
+                    </div>
+                </div>
+
+                <!-- Projects Navigation Filters -->
+                <div class="projects-filter-bar">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="lang-fr">Tous</span>
+                        <span class="lang-en">All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="js">
+                        <span class="lang-fr">JavaScript / Vue / React</span>
+                        <span class="lang-en">JavaScript / Vue / React</span>
+                    </button>
+                    <button class="filter-btn" data-filter="python">
+                        <span class="lang-fr">Python & ML</span>
+                        <span class="lang-en">Python & ML</span>
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projectsGrid">
+                    
+                    <!-- Project: CardQuizz -->
+                    <div class="project-card" data-category="js">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-brands fa-react icon-react"></i></span>
+                            <span class="project-badge bg-react">React.js</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">CardQuizz</h3>
+                            <p class="project-card-desc lang-fr">
+                                Codage d'un jeu de cartes interactif pour effectuer des quizz. Construit avec le framework React.js pour manipuler les états et le DOM de façon performante.
+                            </p>
+                            <p class="project-card-desc lang-en">
+                                Interactive card game for executing quiz challenges. Built with React.js to explore state management and performant rendering.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/filipito93360/CardQuizz" target="_blank" rel="noopener" class="project-link">
+                                <span class="lang-fr">Code Source</span>
+                                <span class="lang-en">Source Code</span>
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project: intrusion_detection_model -->
+                    <div class="project-card" data-category="python">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-brands fa-python icon-python"></i></span>
+                            <span class="project-badge bg-python">Python / ML</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Intrusion Detection Model</h3>
+                            <p class="project-card-desc lang-fr">
+                                Projet académique d'intelligence artificielle. Déploiement d'un modèle de Machine Learning pour détecter et classifier les intrusions réseaux (cybersécurité).
+                            </p>
+                            <p class="project-card-desc lang-en">
+                                Academic artificial intelligence project. Implementing a Machine Learning model to detect and classify network intrusions (cybersecurity).
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/filipito93360/intrusion_detection_model" target="_blank" rel="noopener" class="project-link">
+                                <span class="lang-fr">Code Source</span>
+                                <span class="lang-en">Source Code</span>
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project: table_de_shculte -->
+                    <div class="project-card" data-category="js">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-brands fa-vuejs icon-vue"></i></span>
+                            <span class="project-badge bg-vue">Vue.js</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Table de Schulte</h3>
+                            <p class="project-card-desc lang-fr">
+                                Application web interactive basée sur les Tables de Schulte (grille de nombres mélangés) pour l'entraînement à la lecture rapide et à la concentration mentale.
+                            </p>
+                            <p class="project-card-desc lang-en">
+                                Interactive web application representing a Schulte Table grid, used for training attention, peripheral vision, and speed reading.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/filipito93360/table_de_shculte" target="_blank" rel="noopener" class="project-link">
+                                <span class="lang-fr">Code Source</span>
+                                <span class="lang-en">Source Code</span>
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project: progress_carousel -->
+                    <div class="project-card" data-category="js">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-brands fa-js icon-js"></i></span>
+                            <span class="project-badge bg-vanilla">Vanilla JS</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Progress Carousel</h3>
+                            <p class="project-card-desc lang-fr">
+                                Carousel de progression développé entièrement en JavaScript classique, sans librairie tierce ni framework. Focus sur la maîtrise pure du DOM et du CSS.
+                            </p>
+                            <p class="project-card-desc lang-en">
+                                Interactive progress carousel built purely in vanilla CSS and Javascript. Focus on absolute control over DOM updates and animations.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/filipito93360/progress_carousel" target="_blank" rel="noopener" class="project-link">
+                                <span class="lang-fr">Code Source</span>
+                                <span class="lang-en">Source Code</span>
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project: task-manager -->
+                    <div class="project-card" data-category="js">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-solid fa-list-check"></i></span>
+                            <span class="project-badge bg-vanilla">Vanilla JS</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Task Manager</h3>
+                            <p class="project-card-desc lang-fr">
+                                Organisateur de tâches web catégorisé. Permet de créer, regrouper par dossier et clore les tâches obsolètes de manière intuitive en JavaScript.
+                            </p>
+                            <p class="project-card-desc lang-en">
+                                Category-based task manager. Offers UI to create, classify into folders, and delete tasks dynamically via DOM manipulation.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/filipito93360/task-manager" target="_blank" rel="noopener" class="project-link">
+                                <span class="lang-fr">Code Source</span>
+                                <span class="lang-en">Source Code</span>
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="lang-fr">Contactez-Moi</span>
+                        <span class="lang-en">Contact Me</span>
+                    </h2>
+                    <div class="section-subtitle">
+                        <span class="lang-fr">Discutons de vos projets ou d'une opportunité d'alternance</span>
+                        <span class="lang-en">Let's discuss coding, systems, or apprenticeship openings</span>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <h3 class="lang-fr">Mes Coordonnées</h3>
+                        <h3 class="lang-en">Reach Out</h3>
+                        <p class="lang-fr">N'hésitez pas à m'envoyer un message. Je réponds généralement sous 24-48 heures.</p>
+                        <p class="lang-en">Don't hesitate to reach out. I usually reply within 24 to 48 hours.</p>
+
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>philippe.brochier@efrei.net</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Paris, France</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/filipito93360" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">
+                                    <span class="lang-fr">Nom Complet</span>
+                                    <span class="lang-en">Full Name</span>
+                                </label>
+                                <input type="text" id="name" required placeholder="Philippe Brochier">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <span class="lang-fr">Adresse Email</span>
+                                    <span class="lang-en">Email Address</span>
+                                </label>
+                                <input type="email" id="email" required placeholder="philippe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">
+                                    <span class="lang-fr">Votre Message</span>
+                                    <span class="lang-en">Your Message</span>
+                                </label>
+                                <textarea id="message" rows="5" required placeholder="Bonjour..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span class="lang-fr">Envoyer le message</span>
+                                <span class="lang-en">Send Message</span>
+                                <i class="fa-solid fa-paper-plane icon-right"></i>
+                            </button>
+                            <div id="formStatus" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Philippe Brochier. All rights reserved.</p>
+            <p class="lang-fr">Fait avec passion en Vanilla HTML, CSS & JavaScript</p>
+            <p class="lang-en">Made with passion using Vanilla HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="index.js"></script>
+</body>
+</html>
