@@ -526,13 +526,13 @@ print(<span class="variable">me</span>.get_philosophy())
                     </div>
 
                     <div class="contact-form-panel">
-                        <form id="contactForm" class="contact-form">
+                        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
                             <div class="form-group">
                                 <label for="name">
                                     <span class="lang-fr">Nom Complet</span>
                                     <span class="lang-en">Full Name</span>
                                 </label>
-                                <input type="text" id="name" required placeholder="Philippe Brochier">
+                                <input type="text" id="name" name="name" required placeholder="Philippe Brochier">
                             </div>
 
                             <div class="form-group">
@@ -540,7 +540,7 @@ print(<span class="variable">me</span>.get_philosophy())
                                     <span class="lang-fr">Adresse Email</span>
                                     <span class="lang-en">Email Address</span>
                                 </label>
-                                <input type="email" id="email" required placeholder="philippe@example.com">
+                                <input type="email" id="email" name="email" required placeholder="philippe@example.com">
                             </div>
 
                             <div class="form-group">
@@ -548,7 +548,7 @@ print(<span class="variable">me</span>.get_philosophy())
                                     <span class="lang-fr">Votre Message</span>
                                     <span class="lang-en">Your Message</span>
                                 </label>
-                                <textarea id="message" rows="5" required placeholder="Bonjour..."></textarea>
+                                <textarea id="message" name="message" rows="5" required placeholder="Bonjour..."></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block">

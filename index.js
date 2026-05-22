@@ -200,6 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnHTML = submitBtn.innerHTML;
 
+        const actionUrl = contactForm.getAttribute('action');
+        if (actionUrl.includes('YOUR_FORM_ID')) {
+            formStatus.className = 'form-status error';
+            formStatus.textContent = currentLang === 'fr'
+                ? 'Erreur : Veuillez configurer votre Formspree Form ID dans index.html.'
+                : 'Error: Please configure your Formspree Form ID in index.html.';
+            return;
+        }
+
         // Visual loading state
         submitBtn.disabled = true;
         submitBtn.innerHTML = currentLang === 'fr' 
@@ -209,26 +218,46 @@ document.addEventListener('DOMContentLoaded', () => {
         formStatus.textContent = '';
         formStatus.className = 'form-status';
 
-        // Mimic server submission delay
-        setTimeout(() => {
+        const data = new FormData(contactForm);
+
+        fetch(actionUrl, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHTML;
 
-            // Success feedback
-            formStatus.className = 'form-status success';
+            if (response.ok) {
+                // Success feedback
+                formStatus.className = 'form-status success';
+                formStatus.textContent = currentLang === 'fr'
+                    ? 'Merci ! Votre message a été envoyé avec succès.'
+                    : 'Thank you! Your message has been sent successfully.';
+                contactForm.reset();
+            } else {
+                response.json().then(data => {
+                    if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
+                        formStatus.textContent = data['errors'].map(error => error['message']).join(", ");
+                    } else {
+                        formStatus.textContent = currentLang === 'fr'
+                            ? "Une erreur s'est produite lors de l'envoi."
+                            : "Oops! There was a problem submitting your form.";
+                    }
+                    formStatus.className = 'form-status error';
+                });
+            }
+        })
+        .catch(error => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+            formStatus.className = 'form-status error';
             formStatus.textContent = currentLang === 'fr'
-                ? 'Merci ! Votre message a été envoyé avec succès.'
-                : 'Thank you! Your message has been sent successfully.';
-
-            // Reset form inputs
-            contactForm.reset();
-
-            // Clear status message after 5 seconds
-            setTimeout(() => {
-                formStatus.textContent = '';
-                formStatus.className = 'form-status';
-            }, 5000);
-
-        }, 1500);
+                ? "Une erreur réseau s'est produite."
+                : "A network error occurred. Please try again.";
+        });
     });
 });
